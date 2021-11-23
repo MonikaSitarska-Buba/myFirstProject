@@ -87,11 +87,11 @@ def scatter(site,payload):
     low, high = (payload[0],payload[1])
     mask=spacex_df[spacex_df['Payload Mass (kg)'].between(low,high)]
     if site=='ALL':
-        fig=px.scatter(mask,x='Payload Mass (kg)',y='class',color='Booster Version Category',title='Success count on Payload mass for all sites')
+        fig=px.scatter(mask,x='Payload Mass (kg)',y='class',color='Booster Version Category',title="Correlation between Payload and Success for All sites")
         return fig
     else:
         mask_filtered=mask[mask['Launch Site']==site]
-        fig=px.scatter(mask_filtered,x='Payload Mass (kg)',y='class',color='Booster Version Category',title='Success count on Payload Mass for' + site)
+        fig=px.scatter(mask_filtered,x='Payload Mass (kg)',y='class',color='Booster Version Category',title='f"Correlation between Payload and Success for site {value1}")
         return fig
 
 # Run the app
